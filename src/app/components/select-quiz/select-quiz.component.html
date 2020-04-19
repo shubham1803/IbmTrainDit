@@ -1,0 +1,10 @@
+<h2 class="p-3 mb-2 bg-dark text-white">Select Subject</h2>
+<hr/>
+
+ <div class="card" style="width: 18rem;" *ngFor="let q of quizzes">
+    <div class="card-body bg-dark">
+        <h5 class="card-title ">{{q.name}}</h5>
+        <button class="btn btn-success" (click)="loadQuiz(q.name)">Select</button>
+     </div>
+
+</div>

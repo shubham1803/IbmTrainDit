@@ -1,0 +1,25 @@
+<h2>{{quiz}} Quiz</h2>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title text-dark">Q: {{currentQuestion.text}}</h5>
+        <div class="radio" *ngFor="let c of choices">
+           
+            <label class="text-dark">
+                <input type="radio" name="optradio" (click)="calculate(c.isAnswer)" class="text-dark"> {{c.text}}
+            </label>
+        </div>
+        <div *ngIf="!isFirstQuestion">
+            <button  class="btn btn-primary" (click)="clickingPreviousQuestion()">Previous</button>
+        </div>
+        <div *ngIf="!isLastQuestion">
+            <button  class="btn btn-primary" (click)="clickingNextQuestion()">Next</button>
+        </div>
+       
+    </div>
+    <button class="btn btn-primary" (click)="finalResult()">Submit</button>
+</div>
+
+
+
+<!-- <h1>{{q.get('name')}}</h1> -->
